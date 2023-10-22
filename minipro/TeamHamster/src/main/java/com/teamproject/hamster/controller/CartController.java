@@ -84,32 +84,37 @@ public class CartController {
         ListView mv = new ListView();
         ArrayList<ProductDTO> productList = mv.getProductList();
 
-//        for (int i = 0; i < productList.size(); i++) {
-//            productList.get(i).getName();
-//            productList.get(i).getSize();
-//            productList.get(i).getPrice();
-//        }
-            for (int j = 0; j < productList.size(); j++) {
-                if (st.equals(change.get(j).getName()) && siz == change.get(j).getSize()) {;
-                    for (int k = 0; k < productList.size(); k++) {
-                        if (st.equals(productList.get(k).getName())) {
-                        System.out.println("변경 할 수 있는 사이즈 목록");
-                        System.out.println("제품 이름 : " + productList.get(j).getName());
-                        System.out.println("제품 사이즈 : " +productList.get(j).getSize());
-                        System.out.println("제품 가격 : " + productList.get(j).getPrice());
-                        System.out.print("변경할 사이즈를 입력 해주세요 : ");
-                        int chan = sc.nextInt();
-                        System.out.println(productList.get(k).getName() + " " + chan + "사이즈로 변경 되었습니다.");
+        for (int i = 0; i < productList.size(); i++) {
+            if (st.equals(productList.get(i).getName())) {
+                //productList.get(i).getName();
+                // productList.get(i).getSize();
+                // productList.get(i).getPrice();
 
-                        //change.set(1,productList.get(0));//수정 기능
+                for (int j = 0; j < change.size(); j++) {
+                    if (st.equals(change.get(j).getName()) && siz == change.get(j).getSize()) {
+                        //for (int k = 0; k < productList.size(); k++) {
+                           // if (st.equals(productList.get(i).getName())) {
+                                System.out.println("변경 할 수 있는 사이즈 목록");
+                                System.out.println("제품 이름 : " + productList.get(i).getName());
+                                System.out.println("제품 사이즈 : " + productList.get(i).getSize());
+                                System.out.println("제품 가격 : " + productList.get(i).getPrice());
+                                System.out.print("변경할 사이즈를 입력 해주세요 : ");
+                                int chan = sc.nextInt();
+                                System.out.println(st + " " + chan + "사이즈로 변경 되었습니다.");
+                                //change.set(st && siz, productList.get(0));//수정 기능
 
-                        System.out.println("장바구니에 돌아 갑니다.");
-                        shopBasket(change); //장바구니에 돌아감
-                         }
+                                System.out.println("장바구니에 돌아 갑니다.");
+                                shopBasket(change); //장바구니에 돌아감
+
+
+                            //}
+                        //}
                     }
                 }
+
             }
 
-       // }
+        }
+
     }
 }
